@@ -1,0 +1,30 @@
+[
+  {
+    "uuid": "1",
+    "name": "GUM THERAPY Glacier Mint Antiplaque & Antigingivitis Mouthwash",
+    "image": "https://www.listerine.com/sites/listerine_us_2/files/styles/jjbos_adaptive_images_generic-tablet/public/lis_312547352666_us_gum_therapy_mw_500ml_mob1_2.webp",
+    "description": "Help reverse signs of early gum disease & gingivitis with LISTERINE® Gum Therapy. Formulated with essential oils, this ADA accepted over-the-counter mouthwash helps kill bad breath germs and bacteria and it also helps remove plaque, one of the leading causes of gum disease.  When used 2x a day, LISTERINE® Gum Therapy improves gum health by treating red, irritated, and bleeding gums, while also freshening your breath.",
+    "price": 6.59
+  },
+  {
+    "uuid": "2",
+    "name": "LISTERINE® COOL MINT® ZERO Mouthwash Concentrate Starter Kit",
+    "image": "https://www.listerine.com/sites/listerine_us_2/files/styles/jjbos_adaptive_images_generic-tablet/public/product-images/lis_us_zero_alcohol_mw_concentrate_starter_kit_1pk_oob1.webp",
+    "description": "Kill 99% of bad breath germs, save money and use 60% less plastic when compared to a 500 mL bottle of LISTERINE® COOL MINT® ZERO.",
+    "price": 11.99
+  },
+  {
+    "uuid": "3",
+    "name": "LISTERINE® COOL MINT® ZERO Mouthwash Concentrate Refill Pack",
+    "image": "https://www.listerine.com/sites/listerine_us_2/files/styles/jjbos_adaptive_images_generic-tablet/public/product-images/lis_312547352352_us_zero_alcohol_mw_cnctr_refill_pack_cool_mint_1pk_oob1.png",
+    "description": "Kill 99% of bad breath germs, save money and use 60% less plastic when compared to a 500 mL bottle of LISTERINE® COOL MINT® ZERO.",
+    "price": 15.99
+  },
+  {
+    "uuid": "4",
+    "name": "LISTERINE® TOTAL CARE Zero Alcohol Anticavity Fluoride Mouthwash, FRESH MINT",
+    "image": "https://www.listerine.com/sites/listerine_us_2/files/styles/jjbos_adaptive_images_generic-tablet/public/product-images/listerine-us-total-care-zero-anticavity-fresh-mint-500ml.webp",
+    "description": "LISTERINE® TOTAL CARE ZERO Mouthwash’s alcohol-free formula with fluoride and fresh mint cleans deep to kill millions of bad breath germs and combat cavities for a healthier mouth.",
+    "price": 8.48
+  }
+]

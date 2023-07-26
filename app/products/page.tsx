@@ -8,7 +8,6 @@ async function fetchData() {
 // Server
 export default async function ProductPage() {
   const { products } = await fetchData();
-  console.log(products);
 
   if (!products.length) {
     return <div>Not Found</div>;

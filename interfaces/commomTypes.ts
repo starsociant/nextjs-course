@@ -1,0 +1,1 @@
+export type SafeNumberType = number | `${number}`

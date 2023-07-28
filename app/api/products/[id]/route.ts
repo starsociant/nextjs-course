@@ -1,12 +1,10 @@
-import Error from "next/error";
 import { NextResponse } from "next/server";
-import products from "../../../../data/products.json";
+import products from "@/data/products.json";
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: number } }
+  { params }: { params: { id: string } }
 ) {
-  const product = products.find(({ id }) => id === params.id);
-
-  return NextResponse.json(product);
+  const product = products.find(({ uuid }) => uuid === params.id);
+  return NextResponse.json({ product });
 }

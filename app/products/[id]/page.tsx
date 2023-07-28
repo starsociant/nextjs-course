@@ -1,3 +1,4 @@
+import { ProductsInterface } from "@/interfaces";
 import Image from "next/image";
 import products from "../../../data/products.json";
 
@@ -37,7 +38,7 @@ export default async function ProductPage({
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  const response = await fetch("http://localhost:3000/api/products");
+  const response = await fetch("http://localhost:3000/api/products", { cache: 'no-cache' });
   const { products } = await response.json();
-  return products.map(({ uuid }) => ({ id: uuid }));
+  return (products as ProductsInterface[]).map(({ uuid }) => ({ id: uuid }));
 }

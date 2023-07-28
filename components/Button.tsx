@@ -1,4 +1,10 @@
-export default function Button({ isSquared = false, label }) {
+export default function Button({
+  isSquared = false,
+  label,
+}: {
+  label: string;
+  isSquared?: boolean;
+}) {
   let classes =
     "bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 ";
 

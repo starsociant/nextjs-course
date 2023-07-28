@@ -1,18 +1,25 @@
-export default function Button({
-  isSquared = false,
-  label,
-}: {
-  label: string;
-  isSquared?: boolean;
-}) {
-  let classes =
-    "bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 ";
+import { ReactNode } from "react";
+import classNames from "classnames";
 
-  if (isSquared) {
-    classes += "py-4";
-  } else {
-    classes += "px-4 py-2";
-  }
+export interface ButtonProps {
+  children: ReactNode;
+  squared?: boolean;
+}
 
-  return <button className={classes}>{label}</button>;
+export default function Button({ children, squared = false }: ButtonProps) {
+  const classes = classNames([
+    "inline-flex",
+    "items-center",
+    "bg-secondary-light",
+    "gap-3",
+    {
+      "py-2 px-4": !squared,
+    },
+    {
+      "p-2": squared,
+    },
+    "rounded-lg",
+  ]);
+
+  return <button className={classes}>{children}</button>;
 }

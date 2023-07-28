@@ -38,7 +38,7 @@ export default async function ProductPage({
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  const response = await fetch("http://localhost:3000/api/products", { cache: 'no-cache' });
+  const response = await fetch("http://localhost:3000/api/products");
   const { products } = await response.json();
   return (products as ProductsInterface[]).map(({ uuid }) => ({ id: uuid }));
 }

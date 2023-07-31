@@ -54,5 +54,11 @@
     "image": "https://www.listerine.com/sites/listerine_us_2/files/styles/jjbos_adaptive_images_generic-tablet/public/product-images/listerine-us-total-care-zero-anticavity-fresh-mint-500ml.webp",
     "description": "LISTERINE® TOTAL CARE ZERO Mouthwash’s alcohol-free formula with fluoride and fresh mint cleans deep to kill millions of bad breath germs and combat cavities for a healthier mouth.",
     "price": 8.48
+  },
+  {
+    "name": "Andre",
+    "image": "https://www.listerine.com/sites/listerine_us_2/files/styles/jjbos_adaptive_images_generic-large_desktop/public/attack-plaque-banner.webp",
+    "description": "Testing",
+    "price": "33.99"
   }
 ]

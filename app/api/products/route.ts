@@ -1,18 +1,37 @@
 import { NextResponse } from "next/server";
-import products from "@/data/products.json";
+import fs from "fs";
+import path from "path";
+import { ProductsInterface } from "@/interfaces";
+
+const filePathGen = () => {
+  return path.join(process.cwd(), "data", "products.json");
+};
+
+const getProducts = (filePath: string): ProductsInterface[] => {
+  return JSON.parse(fs.readFileSync(filePath).toString());
+};
 
 export async function GET(request: Request) {
+  const filePath = filePathGen();
+  const products = getProducts(filePath);
+
   return NextResponse.json({ products });
 }
 
 export async function POST(request: Request) {
-  return NextResponse.json({ products });
-}
+  const body: ProductsInterface = await request.json();
+  const filePath = filePathGen();
+  const data = getProducts(filePath);
 
-export async function PUT(request: Request) {
-  return NextResponse.json({ products });
-}
+  if (!body.description || !body.name || !body.image || !body.price) {
+    return NextResponse.json(
+      { error: "Missing Product Data" },
+      { status: 400 },
+    );
+  }
 
-export async function DELETE(request: Request) {
-  return NextResponse.json({ products });
+  data.push(body);
+  fs.writeFileSync(filePath, JSON.stringify(data));
+
+  return NextResponse.json(body, { status: 201 });
 }

@@ -10,7 +10,6 @@ async function fetchData(): Promise<{ products: ProductsInterface[] }> {
 export default async function Home() {
   const { products } = await fetchData();
 
-
   return (
     <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
       {products.map(({ uuid, name, price, image }) => (

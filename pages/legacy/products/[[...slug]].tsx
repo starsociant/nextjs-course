@@ -1,5 +1,4 @@
 import { ProductsInterface } from "@/interfaces";
-import { GetStaticPaths, GetStaticProps } from "next";
 import slugify from "slugify";
 import Image from "next/image";
 
@@ -21,21 +20,40 @@ export default function ProductPage({ product }: { product: any }) {
   );
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const response = await fetch("http://localhost:3000/api/products");
-  const { products } = await response.json();
-  const slugs = (products as ProductsInterface[]).map(({ uuid, name }) => [
-    uuid,
-    slugify(name),
-  ]);
-  const paths = slugs.map((slug) => ({
-    params: {
-      slug,
-    },
-  }));
+export async function getStaticPaths() {
+  // [slug]
+  // /products/uuid
 
-  return { paths, fallback: false };
-};
+  // [...slug]
+  // /products/uuid
+  // /products/uuid/name
+  // /products/uuid/name/sku
+
+  // [[slug]]
+  // /products
+  // /products/uuid
+
+  // [[...slug]]
+  // /products
+  // /products/uuid
+  // /products/uuid/name
+  // /products/uuid/name/sku
+
+  const response = await fetch(`http://localhost:3000/api/products`);
+  const { products } = await response.json();
+  const paths = (products as ProductsInterface[]).map(({ uuid, name }) => {
+    return {
+      params: {
+        slug: [uuid, slugify(name)],
+      },
+    };
+  });
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
 
 export async function getStaticProps({
   params: { slug },
